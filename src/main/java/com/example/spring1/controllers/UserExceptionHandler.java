@@ -1,6 +1,5 @@
 package com.example.spring1.controllers;
 
-import com.example.spring1.exceptions.DepartmentNotFoundException;
 import com.example.spring1.exceptions.helper.JsonResponse;
 import com.example.spring1.exceptions.UserNotFoundException;
 import com.example.spring1.exceptions.UserPutException;
@@ -21,8 +20,4 @@ public class UserExceptionHandler {
         return new ResponseEntity<>(new JsonResponse(ex.getMessage()), HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(DepartmentNotFoundException.class)
-    public ResponseEntity<JsonResponse> handleError1(HttpServletRequest req, DepartmentNotFoundException ex) {
-        return new ResponseEntity<>(new JsonResponse(ex.getMessage()), HttpStatus.BAD_REQUEST);
-    }
 }
